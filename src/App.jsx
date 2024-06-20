@@ -1,9 +1,11 @@
-import Header from './Header';
+import Header from "./Elements/Global/Header";
+
+
 
 export default function App() {
-  return (
-    <>
+    return (
+      <>
       <Header />
-    </>
-  );
+      </>
+    );
 }
