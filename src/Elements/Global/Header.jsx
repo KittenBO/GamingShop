@@ -37,11 +37,11 @@ export default function Header() {
               Личный кабинет
             </button>
             {isOpen && (
-              <ul className="absolute top-full right-0 bg-white bg-back shadow-md rounded-md p-4 w-60">
-                <li className="flex items-center"><a href="/profile"><img className="w-5 inline-block mx-1" src="icon-profile.svg" alt="" />Профиль</a></li>
-                <li className="flex items-center"><a href="/orders"><img className="w-5 inline-block mx-1" src="icon-profile.svg" alt="" />Баланс</a></li>
-                <li className="flex items-center"><a href="/settings"><img className="w-5 inline-block mx-1" src="icon-profile.svg" alt="" />Ваши покупки</a></li>
-                <li className="flex items-center"><a href="/logout"><img className="w-5 inline-block mx-1" src="icon-profile.svg" alt="" />Состоявшиеся продажи</a></li>
+              <ul className="absolute top-full right-0 shadow-md rounded-md p-4 w-60">
+                <li className="flex items-center"><a href="/"><img className="w-5 inline-block mx-1" src="icon-profile.svg" alt="" />Профиль</a></li>
+                <li className="flex items-center"><a href="/"><img className="w-5 inline-block mx-1" src="icon-profile.svg" alt="" />Баланс</a></li>
+                <li className="flex items-center"><a href="/"><img className="w-5 inline-block mx-1" src="icon-profile.svg" alt="" />Ваши покупки</a></li>
+                <li className="flex items-center"><a href="/"><img className="w-5 inline-block mx-1" src="icon-profile.svg" alt="" />Состоявшиеся продажи</a></li>
               </ul>
             )}
           </li>

@@ -10,6 +10,7 @@ export default {
       primary:"#C99FDC",
       back:"#F4EBF8",
       secondary: "#828282",
+      white:"#FFFFFF",
     },
     fontFamily: {
       'serif': ['Playfair Display', 'serif'],
