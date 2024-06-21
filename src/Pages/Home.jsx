@@ -1,5 +1,5 @@
 import Cards from "../Elements/Home/Cards"
-import Footer from "../Elements/Global/Footer"
+import ChatHome from "../Elements/Home/ChatHome"
 
 export default function Home() {
     return (
@@ -11,6 +11,7 @@ export default function Home() {
             Популярные игры:
           </h1>
           <Cards />
+          <ChatHome  />
         </div>
       </>
     );

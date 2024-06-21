@@ -11,6 +11,7 @@ export default {
       back:"#F4EBF8",
       secondary: "#828282",
       white:"#FFFFFF",
+      grayChat:"#797979",
     },
     fontFamily: {
       'serif': ['Playfair Display', 'serif'],
