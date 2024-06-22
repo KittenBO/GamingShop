@@ -12,6 +12,9 @@ export default {
       secondary: "#828282",
       white:"#FFFFFF",
       grayChat:"#797979",
+      grayBack:"#F7F7F7",
+      btnHover:"#D9C3E3",
+      backgroundPages:"#E1E1E1",
     },
     fontFamily: {
       'serif': ['Playfair Display', 'serif'],

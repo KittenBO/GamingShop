@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ title, items, link }) => {
+function Card( { title, items, link }) {
   return (
     <div className="bg-white shadow-xl my-8 rounded p-4 h-96 relative">
       <h2 className="text-2xl text-center font-bold mb-4">{title}</h2>
@@ -18,7 +18,7 @@ const Card = ({ title, items, link }) => {
   );
 };
 
-const Cards = () => {
+export default function Cards() {
   const cards = [
     {
       title: 'Карточка 1',
@@ -55,5 +55,3 @@ const Cards = () => {
     </div>
   );
 };
-
-export default Cards;
