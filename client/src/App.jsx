@@ -6,8 +6,9 @@ import Layout from './Layout';
 import Home from './Pages/Home';
 import Example from './Pages/Example';
 import LoginPage from './Pages/Login';
-import Register
- from './Pages/Register';
+import Register from './Pages/Register';
+import Profile from './Pages/Profile';
+
 export default function App() {
   return (
     <Router>
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/Register" element={<Register />}/>
         <Route path="/" element={<Layout><Home /></Layout>} />
         <Route path="/Example" element={<Layout><Example /></Layout>} />
+        <Route path="/Profile" element={<Layout><Profile /></Layout>} />
       </Routes>
     </Router>
   );

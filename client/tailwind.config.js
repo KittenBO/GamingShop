@@ -15,6 +15,7 @@ export default {
       grayBack:"#F7F7F7",
       btnHover:"#D9C3E3",
       backgroundPages:"#E1E1E1",
+      grayProfile: "#D3D1D3",
     },
     fontFamily: {
       'serif': ['Playfair Display', 'serif'],

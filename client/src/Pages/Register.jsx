@@ -1,5 +1,7 @@
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useState } from 'react';
+import { IMaskInput } from 'react-imask';
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [registrationType, setRegistrationType] = useState('phone');
@@ -9,22 +11,26 @@ export default function Register() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleRegistrationTypeChange = (type) => {
+  function handleRegistrationTypeChange(type) {
     setRegistrationType(type);
   };
 
-  const handleRegister = () => {
-    // Здесь можно добавить логику регистрации пользователя
+
+  const navigate = useNavigate();
+
+  function handleRegister() {
     console.log('Регистрация:', { registrationType, email, phone, nickname, password, confirmPassword });
+    navigate("/Profile");
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-backgroundPages">
+    <div className="flex justify-center items-center bg-backgroundPages">
       <div className="bg-back shadow-lg rounded-lg w-full max-w-md md:max-w-xl md:w-3/4 p-8">
         <a href="/" className='pl-2 text-sm hover:text-secondary'> <AiOutlineArrowLeft className="inline-block mr-3" />Вернуться назад</a>
         <div className="mb-6 mt-8 text-center">
           <img className='mx-auto w-1/5' src="logo.svg" alt="" />
           <h1 className="text-xl font-semibold font-serif">ИгроваяЛавка</h1>
+          <h1 className="text-3xl font-bold pt-3">Зарегистрироваться</h1>
         </div>
         <div>
           <div className="mb-4">
@@ -32,13 +38,13 @@ export default function Register() {
               className={`w-1/2 py-2 rounded-l-lg ${registrationType === 'phone' ? 'bg-primary text-white' : 'bg-gray-200'}`}
               onClick={() => handleRegistrationTypeChange('phone')}
             >
-              Зарегеститоваться по телефону
+              По телефону
             </button>
             <button
               className={`w-1/2 py-2 rounded-r-lg ${registrationType === 'email' ? 'bg-primary text-white' : 'bg-gray-200'}`}
               onClick={() => handleRegistrationTypeChange('email')}
             >
-              Зарегистрироваться по E-Mail
+              По E-Mail
             </button>
           </div>
           {registrationType === 'email' && (
@@ -61,13 +67,12 @@ export default function Register() {
               <label htmlFor="phone" className="block font-medium mb-2">
                 Телефон
               </label>
-              <input
-                type="tel"
-                id="phone"
+              <IMaskInput
+                mask="+7 (000) 000-00-00"
+                placeholder="+7 (___) ___-__-__"
                 className="w-full border border-gray-300 rounded-lg py-2 px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="Введите ваш номер телефона"
                 value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                onAccept={(value) => setPhone(value)}
               />
             </div>
           )}

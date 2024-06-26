@@ -1,6 +1,14 @@
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
+  const navigate = useNavigate();
+
+  function handleLogin() {
+    // Здесь можно добавить логику входа пользователя
+    navigate("/Profile");
+  };
+
   return (
     <div className="flex justify-center items-center h-screen bg-backgroundPages">
       <div className="bg-back shadow-lg rounded-lg w-full max-w-md p-8">
@@ -28,7 +36,10 @@ export default function LoginForm() {
             className="w-full border border-gray-300 rounded-lg py-2 px-4 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             placeholder="Введите пароль"
           />
-          <button className="bg-primary hover:bg-btnHover text-white font-medium py-2 px-4 rounded-lg w-full">
+          <button
+            className="bg-primary hover:bg-btnHover text-white font-medium py-2 px-4 rounded-lg w-full"
+            onClick={handleLogin}
+          >
             Войти
           </button>
         </div>
@@ -41,5 +52,4 @@ export default function LoginForm() {
       </div>
     </div>
   );
-};
-
+}
