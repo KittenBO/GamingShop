@@ -7,6 +7,8 @@ import Example from './Pages/Example';
 import LoginPage from './Pages/Login';
 import Register from './Pages/Register';
 import Profile from './Pages/Profile';
+import Finance from './Pages/Finance';
+import Games from './Pages/Games';
 
 export default function App() {
   return (
@@ -15,8 +17,10 @@ export default function App() {
         <Route path="/Login" element={<LoginPage/>} />
         <Route path="/Register" element={<Register/>}/>
         <Route path="/" element={<Layout><Home/></Layout>} />
-        <Route path="/Example" element={<Layout><Example /></Layout>} />
-        <Route path="/Profile" element={<Layout><Profile /></Layout>} />
+        <Route path="/Example" element={<Layout><Example/></Layout>} />
+        <Route path="/Profile" element={<Layout><Profile/></Layout>} />
+        <Route path="/Finance" element={<Layout><Finance/> </Layout>}/>
+        <Route path="/Games" element={<Layout><Games/></Layout>} />
       </Routes>
     </Router>
   );

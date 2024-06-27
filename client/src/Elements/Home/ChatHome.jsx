@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ChatHome() {
   return (
-    <div className="h-98 w-3/4 mx-auto my-16 flex flex-col shadow-2xl">
+    <div className="h-98 w-3/4 mx-auto my-16 flex flex-col shadow-2xl" id='chatHome'>
       <div className="bg-white shadow p-4 flex-grow overflow-y-auto">
         <h1 className='text-3xl font-semibold'>Чат с пользователями</h1>
         <div className="p-2 pl-10 rounded-lg mb-2 self-end">

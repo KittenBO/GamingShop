@@ -3,8 +3,36 @@ import { CgProfile } from "react-icons/cg";
 import { PiMoney } from "react-icons/pi";
 import { FaShoppingCart, FaHandshake } from 'react-icons/fa';
 import CurrencyInput from 'react-currency-input-field';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Header() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollToChat = () => {
+
+
+    if (location.pathname === '/') {
+      // Если мы находимся на странице Home, то просто прокручиваем к элементу #chatHome
+      const chatElement = document.getElementById('chatHome');
+      if (chatElement) {
+        chatElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Если мы находимся на другой странице, то сначала переходим на страницу Home,
+      // а затем прокручиваем к элементу #chatHome
+      navigate('/');
+      setTimeout(() => {
+        const chatElement = document.getElementById('chatHome');
+        if (chatElement) {
+          chatElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 500); // Задержка в 500 мс, чтобы дать время на переход на страницу Home
+    }
+  };
+
+
+
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -22,14 +50,16 @@ export default function Header() {
         <ul className="flex justify-between w-full pl-3 pt-3 pr-5">
           <li className="w-1/3 flex items-center">
             <a className="flex items-center" href="/">
-              <img className='w-1/5 pr-3' src="logo.svg" alt="" />
+              <img className="w-1/5 pr-3" src="logo.svg" alt="" />
               <h1 className="text-3xl font-semibold font-serif">ИгроваяЛавка</h1>
             </a>
           </li>
-          <li className="flex items-center"><a href="/Example">Все игры</a></li>
+          <li className="flex items-center"><a href="/Games">Все игры</a></li>
           <li className="flex items-center"><a href="/Example">Мини-Игры</a></li>
           <li className="flex items-center"><a href="/Example">Форум</a></li>
-          <li className="flex items-center"><a href="/Example">Чат</a></li>
+          <li className="flex items-center">
+            <a onClick={scrollToChat}>Чат</a>
+          </li>
           <li className="relative flex items-center">
             <button
               className="bg-primary px-4 py-2 rounded-md text-white"
@@ -47,8 +77,10 @@ export default function Header() {
                 </li>
                 <li className="border-t border-grayProfile my-1"></li>
                 <li className="flex items-center">
-                  <PiMoney className='inline-block mx-1' />
-                  <span>Баланс</span><span className='font-medium mx-2'>24 руб.</span>
+                  <a href="/Finance">
+                    <PiMoney className='inline-block mx-1' />
+                    <span>Баланс</span><span className='font-medium mx-2'>24 руб.</span>
+                  </a>
                   <button
                     className="bg-primary px-2 py-1 text-xs rounded text-white"
                     onClick={toggleModal}

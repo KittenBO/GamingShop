@@ -16,6 +16,8 @@ export default {
       btnHover:"#D9C3E3",
       backgroundPages:"#E1E1E1",
       grayProfile: "#D3D1D3",
+      ruLetters: "#B14CDF",
+      enLetters: "#C5A3D5",
     },
     fontFamily: {
       'serif': ['Playfair Display', 'serif'],

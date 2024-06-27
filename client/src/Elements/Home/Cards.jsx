@@ -48,7 +48,7 @@ export default function Cards() {
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-x-16 w-4/5 mt-10 mx-auto">
+    <div className="grid grid-cols-2 gap-x-16 w-4/5 mt-10 mx-auto">
       {cards.map((card, index) => (
         <Card key={index} title={card.title} items={card.items} link={card.link} />
       ))}
