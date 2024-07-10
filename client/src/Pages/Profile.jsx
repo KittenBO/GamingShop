@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function Profile() {
   const [activeTab, setActiveTab] = useState('profile');
 
-  const handleTabClick = (tab) => {
+  function handleTabClick(tab) {
     setActiveTab(tab);
   };
 

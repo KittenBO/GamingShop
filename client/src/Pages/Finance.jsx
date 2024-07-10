@@ -1,7 +1,7 @@
 export default function Finance() {
-    return (
-      <>
-        Финансы
-      </>
-    );
-}
+  return (
+    <>
+    Финансы
+    </>
+  );
+};

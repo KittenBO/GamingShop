@@ -10,6 +10,8 @@ import Profile from './Pages/Profile';
 import Finance from './Pages/Finance';
 import Games from './Pages/Games';
 
+import Albion from './Pages/GameList/Albion';
+
 export default function App() {
   return (
     <Router>
@@ -21,6 +23,10 @@ export default function App() {
         <Route path="/Profile" element={<Layout><Profile/></Layout>} />
         <Route path="/Finance" element={<Layout><Finance/> </Layout>}/>
         <Route path="/Games" element={<Layout><Games/></Layout>} />
+
+
+
+        <Route path="/Albion" element={<Layout><Albion /></Layout>} />
       </Routes>
     </Router>
   );

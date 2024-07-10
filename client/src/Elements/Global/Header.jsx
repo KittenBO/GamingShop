@@ -19,15 +19,13 @@ export default function Header() {
         chatElement.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // Если мы находимся на другой странице, то сначала переходим на страницу Home,
-      // а затем прокручиваем к элементу #chatHome
       navigate('/');
       setTimeout(() => {
         const chatElement = document.getElementById('chatHome');
         if (chatElement) {
           chatElement.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 500); // Задержка в 500 мс, чтобы дать время на переход на страницу Home
+      }, 500); 
     }
   };
 

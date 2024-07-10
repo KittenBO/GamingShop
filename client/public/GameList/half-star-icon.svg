@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" width="17" height="17">
+	<title>star-svg</title>
+	<defs>
+		<image  width="9" height="16" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAMAAADzlqVxAAAAAXNSR0IB2cksfwAAALRQTFRFAAAA/8sA/8wA/8kA/8wA/8wA/80A/8wA//8A/+yA/+WC/+aC/+aA/9xO/88O/9pG/+Z+/+aB/+aA/9EZ/8wA/8wB/80E/9k//+V9/+Z//8wC/8wA/9g4/+Ny/80A/8wA/8wD/9AU/9Uu/88W/9Qp/9Qq/9Qr/91U/9Mq/9Qq/9xN/91V/9Qq/9g8/91V/9Qq/9Uw/91U/91W/9Qq/9Us/9xR/9xV/91V/9Ys/9pH/91T/9pQEUB5BAAAADx0Uk5TAEryTP7rTf8BKGqt3feE+/7+//6L/v7/////iP//hP3///+f/v///7r+///V/v7r/v79DPz+uB5F/r4wbnahEAAAAGdJREFUeJxjZIACRkYYiwnGYoaLsf6Hstj+MTMycDCCwC8GRj4Q/Z+B6QsjgwhYiB2kQ/olAzODKFivHONTGUaIKcpgTSCWBuMfVghL5y8LyDwg0Gdk/MsCYhkzMv7kAMtaAJUfZQAAxt8Pcxc/q0oAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Слой 1" href="#img1" x="0" y="1"/>
+</svg>

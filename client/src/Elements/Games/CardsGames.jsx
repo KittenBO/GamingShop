@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import SearchLetters from './SearchLetters';
 
 function Card({ title, items, link }) {
   return (
@@ -10,8 +9,8 @@ function Card({ title, items, link }) {
           <li key={index}>{item}</li>
         ))}
       </ul>
-      <div className="flex absolute bottom-3">
-        <a href={link} className="bg-primary px-24 py-2 rounded-md text-white">
+      <div className="flex justify-center absolute bottom-3 w-full -ml-4">
+        <a href={link} className="bg-primary px-32 py-2 rounded-md text-white">
           Перейти
         </a>
       </div>
@@ -19,7 +18,7 @@ function Card({ title, items, link }) {
   );
 }
 
-export default function CardsGames({ firstLetters }) {
+export default function CardsGames() {
   const [cards, setCards] = useState([]);
   const [sortedCards, setSortedCards] = useState([]);
 
@@ -27,8 +26,8 @@ export default function CardsGames({ firstLetters }) {
     const cards = [
       {
         title: 'Albion',
-        items: ['Элемент списка 7', 'Элемент списка 8'],
-        link: '/Example',
+        items: ['Золото', 'Серебро', 'Аккаунты', 'Услуги'],
+        link: '/Albion',
       },
       {
         title: 'Brawl Stars',

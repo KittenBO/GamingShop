@@ -1,11 +1,11 @@
 import React from 'react';
 
-const SearchLetters = () => {
+export default function SearchLetters() {
   // Массивы русских и английских букв
   const russianLetters = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Я'];
   const englishLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'];
 
-  const scrollToSection = (id) => {
+  function scrollToSection(id) {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({
@@ -45,4 +45,3 @@ const SearchLetters = () => {
   );
 };
 
-export default SearchLetters;
