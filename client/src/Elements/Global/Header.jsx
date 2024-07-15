@@ -56,7 +56,7 @@ export default function Header() {
           <li className="flex items-center"><a href="/Example">Мини-Игры</a></li>
           <li className="flex items-center"><a href="/Example">Форум</a></li>
           <li className="flex items-center">
-            <a onClick={scrollToChat}>Чат</a>
+            <a  className='cursor-pointer'onClick={scrollToChat}>Чат</a>
           </li>
           <li className="relative flex items-center">
             <button

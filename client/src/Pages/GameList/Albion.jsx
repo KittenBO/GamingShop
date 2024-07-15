@@ -1,5 +1,10 @@
 import { useState } from 'react';
 
+import GoldGameList from '../../Elements/GameList/GoldGameList';
+import SilverGameList from '../../Elements/GameList/SilverGameList';
+import AccountGameList from '../../Elements/GameList/AccountGameList';
+import ServiceGameList from '../../Elements/GameList/ServiceGameList';
+
 const goldAds = [
   {
     id: 1,
@@ -123,118 +128,12 @@ export default function Albion() {
           </li>
         </ul>
         <div className='flex justify-end'>
-          <a href="/Example" className="bg-primary px-8 py-2 text-lg my-6 rounded-md text-white">Создать</a>
+          <a href="/CreateAdd" className="bg-primary px-8 py-2 text-lg my-6 rounded-md text-white">Создать</a>
         </div>
-        {activeTab === 'gold' && (
-          <div className="w-full my-6">
-            {goldAds.map((ad) => (
-              <div key={ad.id} className="flex items-center border-b-2 border-grayProfile py-5">
-                <div className="w-2/3 pl-5">
-                  <p className="text-xl">{ad.text}</p>
-                </div>
-                <div className="w-1/6 flex flex-col items-center">
-
-                <img src={ad.avatar} alt={ad.username} className="w-16 h-16 rounded-full" />
-                  <p className="text-sm">{ad.username}</p>
-                  <div className="flex items-center">
-                    {[...Array(Math.floor(ad.rating))].map((_, index) => (
-                      <img key={index} src="GameList/star-icon.svg" alt="Star" className="w-5 h-5" />
-                    ))}
-                    {ad.rating % 1 !== 0 && (
-                      <img src="GameList/half-star-icon.svg" alt="Half Star" className="w-5 h-5" />
-                    )}
-                  </div>
-                  <p className='text-xs text-grayChat'>{ad.rating}</p>
-                </div>
-                <div className="w-1/6 text-right pr-6">
-                  <p className="text-2xl font-bold">{ad.price.toFixed(2)}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-        {activeTab === 'silver' && (
-          <div className="w-full my-6">
-            {silverAds.map((ad) => (
-              <div key={ad.id} className="flex items-center border-b-2 border-grayProfile py-5">
-                <div className="w-2/3 pl-5">
-                  <p className="text-xl">{ad.text}</p>
-                </div>
-                <div className="w-1/6 flex flex-col items-center">
-                  <img src={ad.avatar} alt={ad.username} className="w-16 h-16 rounded-full" />
-                  <p className="text-sm">{ad.username}</p>
-                  <div className="flex items-center">
-                    {[...Array(Math.floor(ad.rating))].map((_, index) => (
-                      <img key={index} src="GameList/star-icon.svg" alt="Star" className="w-5 h-5" />
-                    ))}
-                    {ad.rating % 1 !== 0 && (
-                      <img src="GameList/half-star-icon.svg" alt="Half Star" className="w-5 h-5" />
-                    )}
-                  </div>
-                  <p className='text-xs text-grayChat'>{ad.rating}</p>
-                </div>
-                <div className="w-1/6 text-right pr-6">
-                  <p className="text-2xl font-bold">{ad.price.toFixed(2)}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-        {activeTab === 'account' && (
-          <div className="w-full my-6">
-            {accountAds.map((ad) => (
-              <div key={ad.id} className="flex items-center border-b-2 border-grayProfile py-5">
-                <div className="w-2/3 pl-5">
-                  <p className="text-xl">{ad.text}</p>
-                </div>
-                <div className="w-1/6 flex flex-col items-center">
-                  <img src={ad.avatar} alt={ad.username} className="w-16 h-16 rounded-full" />
-                  <p className="text-sm">{ad.username}</p>
-                  <div className="flex items-center">
-                    {[...Array(Math.floor(ad.rating))].map((_, index) => (
-                      <img key={index} src="GameList/star-icon.svg" alt="Star" className="w-5 h-5" />
-                    ))}
-                    {ad.rating % 1 !== 0 && (
-                      <img src="GameList/half-star-icon.svg" alt="Half Star" className="w-5 h-5" />
-                    )}
-                  </div>
-                  <p className='text-xs text-grayChat'>{ad.rating}</p>
-                </div>
-                <div className="w-1/6 text-right pr-6">
-                  <p className="text-2xl font-bold">{ad.price.toFixed(2)}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-        {activeTab === 'service' && (
-          <div className="w-full my-6">
-            {serviceAds.map((ad) => (
-              <div key={ad.id} className="flex items-center border-b-2 border-grayProfile py-5">
-                <div className="w-2/3 pl-5">
-                  <p className="text-xl">{ad.text}</p>
-                </div>
-
-                <div className="w-1/6 flex flex-col items-center">
-                  <img src={ad.avatar} alt={ad.username} className="w-16 h-16 rounded-full" />
-                  <p className="text-sm">{ad.username}</p>
-                  <div className="flex items-center">
-                    {[...Array(Math.floor(ad.rating))].map((_, index) => (
-                      <img key={index} src="GameList/star-icon.svg" alt="Star" className="w-5 h-5" />
-                    ))}
-                    {ad.rating % 1 !== 0 && (
-                      <img src="GameList/half-star-icon.svg" alt="Half Star" className="w-5 h-5" />
-                    )}
-                  </div>
-                  <p className='text-xs text-grayChat'>{ad.rating}</p>
-                </div>
-                <div className="w-1/6 text-right pr-6">
-                  <p className="text-2xl font-bold">{ad.price.toFixed(2)}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+        {activeTab === 'gold' && <GoldGameList goldAds={goldAds} />}
+        {activeTab === 'silver' && <SilverGameList silverAds={silverAds} />}
+        {activeTab === 'account' && <AccountGameList accountAds={accountAds} />}
+        {activeTab === 'service' && <ServiceGameList serviceAds={serviceAds} />}
       </div>
     </>
   );

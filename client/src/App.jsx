@@ -9,6 +9,8 @@ import Register from './Pages/Register';
 import Profile from './Pages/Profile';
 import Finance from './Pages/Finance';
 import Games from './Pages/Games';
+import CreateAdd from './Pages/CreateAdd';
+import EditAdd from './Pages/EditAdd'
 
 import Albion from './Pages/GameList/Albion';
 
@@ -23,6 +25,8 @@ export default function App() {
         <Route path="/Profile" element={<Layout><Profile/></Layout>} />
         <Route path="/Finance" element={<Layout><Finance/> </Layout>}/>
         <Route path="/Games" element={<Layout><Games/></Layout>} />
+        <Route path="/CreateAdd" element={<Layout><CreateAdd/></Layout>} />
+        <Route path="/EditAdd" element={<Layout><EditAdd/></Layout>} />
 
 
 

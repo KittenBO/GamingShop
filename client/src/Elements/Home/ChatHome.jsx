@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function ChatHome() {
   return (
     <div className="h-98 w-3/4 mx-auto my-16 flex flex-col shadow-2xl" id='chatHome'>
