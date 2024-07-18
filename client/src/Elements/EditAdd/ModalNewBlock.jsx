@@ -1,6 +1,5 @@
-import React from 'react';
 
-const ModalNewBlock = ({ isModalOpen, handleCloseModal, dragStartHandler }) => {
+export default function ModalNewBlock({ isModalOpen, handleCloseModal, dragStartHandler }) {
   return (
     <>
       {isModalOpen && (
@@ -55,5 +54,3 @@ const ModalNewBlock = ({ isModalOpen, handleCloseModal, dragStartHandler }) => {
     </>
   );
 };
-
-export default ModalNewBlock;

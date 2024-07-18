@@ -1,7 +1,18 @@
 import FileInput from './FileInput';
+import FormatableInput from '../Global/FormatableInput';
 
-export default function BlocksEdit({grayBlocks, handleInputChange, handleImageChange, handleOpenModal, dropHandler,
-  dragStartHandler, dragEndHandler, handleRestoreBlock, index,}){
+export default function BlocksEdit({
+  grayBlocks,
+  handleInputChange,
+  handleImageChange,
+  handleOpenModal,
+  dropHandler,
+  dragStartHandler,
+  dragEndHandler,
+  handleRestoreBlock,
+  index,
+}) {
+
   return (
     <div
       className={`${grayBlocks[index].bgColor} py-14 px-6 cursor-pointer ${
@@ -12,20 +23,18 @@ export default function BlocksEdit({grayBlocks, handleInputChange, handleImageCh
       onDrop={(e) => dropHandler(e, index)}
       onDragStart={(e) => dragStartHandler(e, 'Блок 1')}
       onDragEnd={dragEndHandler}
-      draggable
+      draggable={grayBlocks[index].isDraggable}
     >
       {grayBlocks[index].type ? (
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 flex-1">
             {grayBlocks[index].type === 'Блок 1' && (
               <>
-                <textarea
-                  placeholder="Текст"
+                <FormatableInput
                   value={grayBlocks[index].text}
                   onChange={(e) => handleInputChange(index, 'text', e.target.value)}
-                  className={`border rounded px-2 py-1 flex-1 resize-none ${
-                    grayBlocks[index].image ? 'h-48' : 'h-24'
-                  }`}
+                  placeholder="Текст"
+                  className="rounded px-2 py-1 flex-1 resize-none h-64"
                 />
                 <div className="flex-1 h-48 flex items-center justify-center">
                   <FileInput value={grayBlocks[index].image} onChange={handleImageChange} index={index} />
@@ -37,23 +46,21 @@ export default function BlocksEdit({grayBlocks, handleInputChange, handleImageCh
                 <div className="flex-1 h-48 flex items-center justify-center">
                   <FileInput value={grayBlocks[index].image} onChange={handleImageChange} index={index} />
                 </div>
-                <textarea
-                  placeholder="Текст"
+                <FormatableInput
                   value={grayBlocks[index].text}
                   onChange={(e) => handleInputChange(index, 'text', e.target.value)}
-                  className={`border rounded px-2 py-1 flex-1 resize-none ${
-                    grayBlocks[index].image ? 'h-48' : 'h-24'
-                  }`}
+                  placeholder="Текст"
+                  className="rounded px-2 py-1 flex-1 resize-none h-64"
                 />
               </>
             )}
             {grayBlocks[index].type === 'Блок 3' && (
               <>
-                <textarea
-                  placeholder="Текст"
-                  value={grayBlocks[index].text}
+                <FormatableInput
+                  value={grayBlocks[index].text1}
                   onChange={(e) => handleInputChange(index, 'text', e.target.value)}
-                  className="border rounded mx-52 py-1 flex-1 resize-none h-48"
+                  placeholder="Текст"
+                  className="rounded px-2 py-1 flex-1 resize-none h-32"
                 />
               </>
             )}
@@ -64,6 +71,7 @@ export default function BlocksEdit({grayBlocks, handleInputChange, handleImageCh
                 </div>
               </>
             )}
+            
           </div>
           <div className="flex items-center space-x-2">
             <button
@@ -78,9 +86,10 @@ export default function BlocksEdit({grayBlocks, handleInputChange, handleImageCh
           </div>
         </div>
       ) : (
-        <p className="text-center text-2xl font-semibold text-grayChat">Добавить блок+</p>
+        <p className="text-center text-2xl font-semibold text-grayChat" onClick={handleOpenModal}>
+          Добавить блок+
+        </p>
       )}
     </div>
   );
-};
-
+}

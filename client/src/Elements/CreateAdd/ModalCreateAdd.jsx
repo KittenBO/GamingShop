@@ -10,7 +10,7 @@ export default function ModalCreateAdd({
   addNewLot,
 }) {
   if (!isOpen) return null;
-
+  
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
       <div className="bg-grayBack p-6 rounded-md shadow-lg w-80">

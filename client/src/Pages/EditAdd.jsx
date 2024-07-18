@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 
 import ModalNewBlock from '../Elements/EditAdd/ModalNewBlock'
 import BlocksEdit from '../Elements/EditAdd/BlocksEdit';
@@ -51,6 +52,7 @@ import ChatEditAdd from '../Elements/EditAdd/ChatEditAdd';
     const location = useLocation();
     const lotType = new URLSearchParams(location.search).get('lotType');
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isDragged, setIsDragged] = useState(false);
     const [grayBlocks, setGrayBlocks] = useState([
       { type: '', text: '', image: null, imageHeight: 'auto', bgColor: 'bg-grayProfile' },
       { type: '', text: '', image: null, imageHeight: 'auto', bgColor: 'bg-grayProfile' },
@@ -78,18 +80,21 @@ import ChatEditAdd from '../Elements/EditAdd/ChatEditAdd';
     function dragStartHandler(e, blockType) {
       e.dataTransfer.setData('blockType', blockType);
       e.currentTarget.classList.add('bg-transparent');
+      setIsDragged(true);
     };
   
     function dragEndHandler(e) {
       e.currentTarget.classList.remove('bg-transparent');
+      setIsDragged(false);
     };
   
-    function dropHandler(e, index) {
+    function dropHandler(e, targetIndex) {
       e.preventDefault();
       e.currentTarget.classList.remove('bg-transparent');
       const blockType = e.dataTransfer.getData('blockType');
       const updatedGrayBlocks = [...grayBlocks];
-      updatedGrayBlocks[index] = { type: blockType, text: '', image: null, imageHeight: 'auto', bgColor: '' };
+      updatedGrayBlocks[targetIndex] = { type: blockType, text: '', image: null, imageHeight: 'auto', bgColor: '' };
+      updatedGrayBlocks[targetIndex].isDraggable = false;
       setGrayBlocks(updatedGrayBlocks);
     };
   
@@ -126,9 +131,19 @@ import ChatEditAdd from '../Elements/EditAdd/ChatEditAdd';
         </div>
         <ReviewList gameAuthor={gameAuthor} reviews={reviews} />
         <ChatEditAdd gameAuthor={gameAuthor} />
-      <ModalNewBlock
-        isModalOpen={isModalOpen} handleCloseModal={handleCloseModal}
-        dragStartHandler={dragStartHandler} dragEndHandler={dragEndHandler} />
+        <div className='flex justify-end'>
+          <button className="bg-primary text-white font-bold py-2 mr-6 px-4 rounded">
+            Cохранить
+          </button>
+          <button className="bg-primary text-white font-bold py-2 px-4 rounded">
+            Cохранить и опубликовать
+          </button>
+        </div>
+        <CSSTransition in={isModalOpen} timeout={300} classNames="editAdd" unmountOnExit>
+          <ModalNewBlock
+          isModalOpen={isModalOpen} handleCloseModal={handleCloseModal}
+          dragStartHandler={dragStartHandler} dragEndHandler={dragEndHandler} />
+        </CSSTransition>
     </div>
   );
 };

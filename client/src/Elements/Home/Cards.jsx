@@ -1,6 +1,7 @@
-import React from 'react';
+import { useRef, useEffect } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-function Card( { title, items, link }) {
+function Card({ title, items, link }) {
   return (
     <div className="bg-white shadow-xl my-8 rounded p-4 h-96 relative">
       <h2 className="text-2xl text-center font-bold mb-4">{title}</h2>
@@ -16,7 +17,7 @@ function Card( { title, items, link }) {
       </div>
     </div>
   );
-};
+}
 
 export default function Cards() {
   const cards = [

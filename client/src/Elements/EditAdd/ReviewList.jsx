@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const StarRating = ({ rating }) => {
   const fullStars = Math.floor(rating);
@@ -34,20 +35,28 @@ const ReviewList = ({ gameAuthor, reviews }) => {
           </div>
         </div>
         <div className="w-2/3">
-          {reviews.slice(0, visibleReviews).map((review, index) => (
-            <div key={index} className="mb-8">
-              <div className="container w-full flex items-center">
-                <div className="w-4/5 flex flex-wrap">
-                  <StarRating rating={review.rating} />
-                  <p className="text-xl w-full">{review.text}</p>
+          <TransitionGroup>
+            {reviews.slice(0, visibleReviews).map((review, index) => (
+              <CSSTransition key={index} timeout={300} classNames="review">
+                <div className="mb-8 bg-grayBack shadow-md rounded-md p-4">
+                  <div className="container w-full flex items-center">
+                    <div className="w-4/5 flex flex-wrap">
+                      <StarRating rating={review.rating} />
+                      <p className="text-xl w-full">{review.text}</p>
+                    </div>
+                    <div className="w-1/5 flex flex-col items-center">
+                      <img
+                        src={review.avatar}
+                        alt={review.name}
+                        className="w-16 h-16 object-cover rounded-full mb-2"
+                      />
+                      <div className="font-bold">{review.name}</div>
+                    </div>
+                  </div>
                 </div>
-                <div className="w-1/5 flex flex-col items-center">
-                  <img src={review.avatar} alt={review.name} className="w-16 h-16 object-cover rounded-full mb-2" />
-                  <div className="font-bold">{review.name}</div>
-                </div>
-              </div>
-            </div>
-          ))}
+              </CSSTransition>
+            ))}
+          </TransitionGroup>
           {reviews.length > visibleReviews && (
             <div className="text-center">
               <button

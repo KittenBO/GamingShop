@@ -18,6 +18,8 @@ export default {
       grayProfile: "#D3D1D3",
       ruLetters: "#B14CDF",
       enLetters: "#C5A3D5",
+      red: "#EF4444",
+      green: "#22C55E",
     },
     fontFamily: {
       'serif': ['Playfair Display', 'serif'],

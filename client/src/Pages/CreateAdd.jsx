@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 
 import ModalCreateAdd from '../Elements/CreateAdd/ModalCreateAdd';
 import LotCreateAdd from '../Elements/CreateAdd/LotCreateAdd';
@@ -128,24 +129,17 @@ export default function CreateAdd() {
           <LotCreateAdd lots={lots} handleLotClick={handleLotClick} />
         </div>
       </div>
-
-      <ModalCreateAdd
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        newLotGame={newLotGame}
-        setNewLotGame={setNewLotGame}
-        newLotCategory={newLotCategory}
-        setNewLotCategory={setNewLotCategory}
-        newLotText={newLotText}
-        setNewLotText={setNewLotText}
-        addNewLot={addNewLot}
-      />
-
-      <HintCreateAdd
-        isOpen={isPublishModalOpen}
-        onClose={closePublishModal}
-        publishModalTimeRemaining={publishModalTimeRemaining}
-      />
+      <CSSTransition in={isModalOpen} timeout={300} classNames="alert" unmountOnExit>
+        <ModalCreateAdd isOpen={isModalOpen}
+          onClose={closeModal} newLotGame={newLotGame}
+          setNewLotGame={setNewLotGame} newLotCategory={newLotCategory}
+          setNewLotCategory={setNewLotCategory} newLotText={newLotText}
+          setNewLotText={setNewLotText} addNewLot={addNewLot} />
+      </CSSTransition>
+      <CSSTransition in={isPublishModalOpen} timeout={300} classNames="alert" unmountOnExit>
+        <HintCreateAdd isOpen={isPublishModalOpen}
+          onClose={closePublishModal} publishModalTimeRemaining={publishModalTimeRemaining} />
+      </CSSTransition>
     </>
   );
 };
