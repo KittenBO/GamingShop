@@ -10,6 +10,22 @@ body {
   padding: 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .editAdd-enter {
   opacity: 0;
   transform: translateX(100%);
@@ -56,53 +72,40 @@ body {
   opacity: 0;
   transform: scale(0.9);
 }
+
 .alert-enter-active {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 300ms, transform 300ms;
 }
+
 .alert-exit {
   opacity: 1;
-  transform: scale(1);
 }
+
 .alert-exit-active {
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 300ms, transform 300ms;
 }
-.card-enter {
+
+
+.tab-fade-enter {
   opacity: 0;
-  transform: translateY(50px);
 }
 
-.card-enter-active {
+.tab-fade-enter-active {
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 500ms, transform 500ms;
+  transition: opacity 300ms ease-in-out;
 }
 
-.card-exit {
+.tab-fade-exit {
   opacity: 1;
-  transform: translateY(0);
 }
 
-.card-exit-active {
+.tab-fade-exit-active {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 500ms, transform 500ms;
+  transition: opacity 300ms ease-in-out;
 }
 
-.animate {
-  animation: fadeIn 0.5s ease-in-out;
-}
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}

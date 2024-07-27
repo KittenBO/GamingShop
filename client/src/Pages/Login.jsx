@@ -5,8 +5,7 @@ export default function LoginForm() {
   const navigate = useNavigate();
 
   function handleLogin() {
-    // Здесь можно добавить логику входа пользователя
-    navigate("/Profile");
+    navigate("/profile");
   };
 
   return (
@@ -44,10 +43,10 @@ export default function LoginForm() {
           </button>
         </div>
         <div className="w-full text-center mt-4">
-          <a href="/Register" className="text-sm hover:text-secondary">Забыли пароль? Восстановление пароля</a>
+          <a href="/register" className="text-sm hover:text-secondary">Забыли пароль? Восстановление пароля</a>
         </div>
         <div className="w-full text-center">
-          <a href="/Register" className="text-sm hover:text-secondary">Нет аккаунта? Зарегистрироваться</a>
+          <a href="/register" className="text-sm hover:text-secondary">Нет аккаунта? Зарегистрироваться</a>
         </div>
       </div>
     </div>

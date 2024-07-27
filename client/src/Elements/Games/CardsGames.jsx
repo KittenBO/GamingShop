@@ -27,7 +27,7 @@ export default function CardsGames() {
       {
         title: 'Albion',
         items: ['Золото', 'Серебро', 'Аккаунты', 'Услуги'],
-        link: '/Albion',
+        link: '/games/albion',
       },
       {
         title: 'Brawl Stars',

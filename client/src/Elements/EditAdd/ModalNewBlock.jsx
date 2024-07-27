@@ -1,8 +1,9 @@
+import { CSSTransition } from 'react-transition-group';
 
 export default function ModalNewBlock({ isModalOpen, handleCloseModal, dragStartHandler }) {
   return (
     <>
-      {isModalOpen && (
+      <CSSTransition in={isModalOpen} timeout={300} classNames="editAdd" unmountOnExit>
         <div className="fixed top-1/4 right-0 w-1/4 h-2/3 bg-white p-8 rounded-lg shadow-lg">
           <h2 className="text-sm font-semibold text-center text-grayChat mb-4">
             Просто перетащите нужный блок в нужный отсек
@@ -50,7 +51,7 @@ export default function ModalNewBlock({ isModalOpen, handleCloseModal, dragStart
             </button>
           </div>
         </div>
-      )}
+      </CSSTransition>
     </>
   );
 };

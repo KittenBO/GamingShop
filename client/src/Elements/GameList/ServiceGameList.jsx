@@ -11,10 +11,10 @@ export default function ServiceGameList({ serviceAds }) {
             <p className="text-sm">{ad.username}</p>
             <div className="flex items-center">
               {[...Array(Math.floor(ad.rating))].map((_, index) => (
-                <img key={index} src="GameList/star-icon.svg" alt="Star" className="w-5 h-5" />
+                <img key={index} src="../GameList/star-icon.svg" alt="Star" className="w-5 h-5" />
               ))}
               {ad.rating % 1 !== 0 && (
-                <img src="GameList/half-star-icon.svg" alt="Half Star" className="w-5 h-5" />
+                <img src="../GameList/half-star-icon.svg" alt="Half Star" className="w-5 h-5" />
               )}
             </div>
             <p className="text-xs text-grayChat">{ad.rating}</p>

@@ -20,7 +20,7 @@ export default function Register() {
 
   function handleRegister() {
     console.log('Регистрация:', { registrationType, email, phone, nickname, password, confirmPassword });
-    navigate("/Profile");
+    navigate("/profile");
   };
 
   return (

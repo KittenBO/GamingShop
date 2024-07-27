@@ -1,6 +1,3 @@
-import { useRef, useEffect } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
 function Card({ title, items, link }) {
   return (
     <div className="bg-white shadow-xl my-8 rounded p-4 h-96 relative">
@@ -10,7 +7,7 @@ function Card({ title, items, link }) {
           <li key={index}>{item}</li>
         ))}
       </ul>
-      <div className="flex absolute bottom-3">
+      <div className="flex absolute bottom-3 ml-6">
         <a href={link} className="bg-primary px-24 py-2 rounded-md text-white">
           Перейти
         </a>

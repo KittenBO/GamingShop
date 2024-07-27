@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 import GoldGameList from '../../Elements/GameList/GoldGameList';
 import SilverGameList from '../../Elements/GameList/SilverGameList';
@@ -100,7 +101,7 @@ export default function Albion() {
             }`}
             onClick={() => handleTabClick('gold')}
           >
-            <img src="GameList/gold-icon.svg" alt="Gold" />
+            <img src="../GameList/gold-icon.svg" alt="Gold" />
           </li>
           <li
             className={`items-center cursor-pointer p-6 rounded-md ${
@@ -108,7 +109,7 @@ export default function Albion() {
             }`}
             onClick={() => handleTabClick('silver')}
           >
-            <img src="GameList/silver-icon.svg" alt="Silver" />
+            <img src="../GameList/silver-icon.svg" alt="Silver" />
           </li>
           <li
             className={`items-center cursor-pointer p-6 rounded-md ${
@@ -116,7 +117,7 @@ export default function Albion() {
             }`}
             onClick={() => handleTabClick('account')}
           >
-            <img src="GameList/account-icon.svg" alt="Account" />
+            <img src="../GameList/account-icon.svg" alt="Account" />
           </li>
           <li
             className={`items-center cursor-pointer p-6 rounded-md ${
@@ -124,16 +125,24 @@ export default function Albion() {
             }`}
             onClick={() => handleTabClick('service')}
           >
-            <img src="GameList/service-icon.svg" alt="Service" />
+            <img src="../GameList/service-icon.svg" alt="Service" />
           </li>
         </ul>
         <div className='flex justify-end'>
-          <a href="/CreateAdd" className="bg-primary px-8 py-2 text-lg my-6 rounded-md text-white">Создать</a>
+          <a href="/createAdd" className="bg-primary px-8 py-2 text-lg my-6 rounded-md text-white">Создать</a>
         </div>
-        {activeTab === 'gold' && <GoldGameList goldAds={goldAds} />}
-        {activeTab === 'silver' && <SilverGameList silverAds={silverAds} />}
-        {activeTab === 'account' && <AccountGameList accountAds={accountAds} />}
-        {activeTab === 'service' && <ServiceGameList serviceAds={serviceAds} />}
+        <CSSTransition in={activeTab === 'gold'} timeout={300} classNames="tab-fade" unmountOnExit>
+          <GoldGameList goldAds={goldAds} />
+        </CSSTransition>
+        <CSSTransition in={activeTab === 'silver'} timeout={300} classNames="tab-fade" unmountOnExit>
+           <SilverGameList silverAds={silverAds} />
+        </CSSTransition>
+        <CSSTransition in={activeTab === 'account'} timeout={300} classNames="tab-fade" unmountOnExit>
+          <AccountGameList accountAds={accountAds} />
+        </CSSTransition>
+        <CSSTransition in={activeTab === 'service'} timeout={300} classNames="tab-fade" unmountOnExit>
+          <ServiceGameList serviceAds={serviceAds} />
+        </CSSTransition>
       </div>
     </>
   );

@@ -1,13 +1,14 @@
+import { CSSTransition } from 'react-transition-group';
 export default function HintCreateAdd({
   isOpen,
   onClose,
   publishModalTimeRemaining,
 }) {
-  if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-end justify-center bg-black bg-opacity-50">
-      <div className="bg-grayBack p-6 rounded-xl w-full max-w-md mb-8 relative">
+    <CSSTransition in={isOpen} timeout={300} classNames="alert" unmountOnExit>
+    <div className="fixed inset-0 flex items-end justify-center">
+      <div className="bg-white shadow-lg p-6 rounded-xl w-full max-w-md mb-8 relative">
         <div
           className="absolute top-0 left-0 w-full h-1 bg-btnHover"
           style={{
@@ -25,6 +26,7 @@ export default function HintCreateAdd({
         </button>
       </div>
     </div>
+    </CSSTransition>
   );
 };
 

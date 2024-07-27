@@ -139,11 +139,9 @@ import ChatEditAdd from '../Elements/EditAdd/ChatEditAdd';
             Cохранить и опубликовать
           </button>
         </div>
-        <CSSTransition in={isModalOpen} timeout={300} classNames="editAdd" unmountOnExit>
-          <ModalNewBlock
-          isModalOpen={isModalOpen} handleCloseModal={handleCloseModal}
-          dragStartHandler={dragStartHandler} dragEndHandler={dragEndHandler} />
-        </CSSTransition>
+        <ModalNewBlock
+        isModalOpen={isModalOpen} handleCloseModal={handleCloseModal}
+        dragStartHandler={dragStartHandler} dragEndHandler={dragEndHandler} />
     </div>
   );
 };

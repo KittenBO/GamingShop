@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Layout from './Layout';
@@ -10,27 +9,35 @@ import Profile from './Pages/Profile';
 import Finance from './Pages/Finance';
 import Games from './Pages/Games';
 import CreateAdd from './Pages/CreateAdd';
-import EditAdd from './Pages/EditAdd'
+import EditAdd from './Pages/EditAdd';
+import MGList from './Pages/MGList';
 
 import Albion from './Pages/GameList/Albion';
+
+import MGEmoji from './Pages/MGList/MGEmoji';
 
 export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/Login" element={<LoginPage/>} />
-        <Route path="/Register" element={<Register/>}/>
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/register" element={<Register/>}/>
         <Route path="/" element={<Layout><Home/></Layout>} />
         <Route path="/Example" element={<Layout><Example/></Layout>} />
-        <Route path="/Profile" element={<Layout><Profile/></Layout>} />
-        <Route path="/Finance" element={<Layout><Finance/> </Layout>}/>
-        <Route path="/Games" element={<Layout><Games/></Layout>} />
-        <Route path="/CreateAdd" element={<Layout><CreateAdd/></Layout>} />
-        <Route path="/EditAdd" element={<Layout><EditAdd/></Layout>} />
+        <Route path="/profile" element={<Layout><Profile/></Layout>} />
+        <Route path="/finance" element={<Layout><Finance/> </Layout>}/>
+        <Route path="/games" element={<Layout><Games/></Layout>} />
+        <Route path="/createAdd" element={<Layout><CreateAdd/></Layout>} />
+        <Route path="/editAdd" element={<Layout><EditAdd/></Layout>} />
+        <Route path="/mini-games" element={<Layout><MGList/></Layout>} />
 
 
 
-        <Route path="/Albion" element={<Layout><Albion /></Layout>} />
+        <Route path="/games/albion" element={<Layout><Albion /></Layout>} />
+
+
+
+        <Route path="/mini-games/emoji-game" element={<Layout><MGEmoji /></Layout>} />
       </Routes>
     </Router>
   );

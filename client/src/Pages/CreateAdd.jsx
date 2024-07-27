@@ -75,7 +75,7 @@ export default function CreateAdd() {
     const selectedLot = lots.find((lot) => lot.isSelected);
     if (selectedLot) {
       console.log('Публикуем лот:', selectedLot);
-      navigate(`/EditAdd?lotType=${selectedLot.type}`);
+      navigate(`/editAdd?lotType=${selectedLot.type}`);
     } else {
       setIsPublishModalOpen(true);
       startPublishModalTimer();

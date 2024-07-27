@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
+
 import { CgProfile } from "react-icons/cg";
 import { PiMoney } from "react-icons/pi";
 import { FaShoppingCart, FaHandshake } from 'react-icons/fa';
@@ -13,7 +15,6 @@ export default function Header() {
 
 
     if (location.pathname === '/') {
-      // Если мы находимся на странице Home, то просто прокручиваем к элементу #chatHome
       const chatElement = document.getElementById('chatHome');
       if (chatElement) {
         chatElement.scrollIntoView({ behavior: 'smooth' });
@@ -48,12 +49,12 @@ export default function Header() {
         <ul className="flex justify-between w-full pl-3 pt-3 pr-5">
           <li className="w-1/3 flex items-center">
             <a className="flex items-center" href="/">
-              <img className="w-1/5 pr-3" src="logo.svg" alt="" />
+              <img className="w-1/5 pr-3" src="../logo.svg" alt="" />
               <h1 className="text-3xl font-semibold font-serif">ИгроваяЛавка</h1>
             </a>
           </li>
-          <li className="flex items-center"><a href="/Games">Все игры</a></li>
-          <li className="flex items-center"><a href="/Example">Мини-Игры</a></li>
+          <li className="flex items-center"><a href="/games">Все игры</a></li>
+          <li className="flex items-center"><a href="/mini-games">Мини-Игры</a></li>
           <li className="flex items-center"><a href="/Example">Форум</a></li>
           <li className="flex items-center">
             <a  className='cursor-pointer'onClick={scrollToChat}>Чат</a>
@@ -65,17 +66,17 @@ export default function Header() {
             >
               Личный кабинет
             </button>
-            {isOpen && (
+            <CSSTransition in={isOpen} timeout={300} classNames="alert" unmountOnExit>
               <ul className="absolute text-sm -mt-4 bg-grayBack top-full right-0 shadow-md rounded-md p-4 w-60">
                 <li className="flex items-center">
-                  <a href="/Login">
+                  <a href="/login">
                     <CgProfile className='inline-block mx-1' />
                     Профиль
                   </a>
                 </li>
                 <li className="border-t border-grayProfile my-1"></li>
                 <li className="flex items-center">
-                  <a href="/Finance">
+                  <a href="/finance">
                     <PiMoney className='inline-block mx-1' />
                     <span>Баланс</span><span className='font-medium mx-2'>24 руб.</span>
                   </a>
@@ -101,12 +102,13 @@ export default function Header() {
                   </a>
                 </li>
               </ul>
-            )}
+            </CSSTransition>
           </li>
         </ul>
+        <hr className='mx-8 my-5 border-b-2 border-grayChat' />
       </header>
 
-      {isModalOpen && (
+      <CSSTransition in={isModalOpen} timeout={300} classNames="alert" unmountOnExit>
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-50 bg-black">
           <div className="bg-white p-8 rounded-lg shadow-lg">
             <div className="mb-6 mt-8 text-center">
@@ -150,7 +152,7 @@ export default function Header() {
             </form>
           </div>
         </div>
-      )}
+      </CSSTransition>
     </>
   );
 }

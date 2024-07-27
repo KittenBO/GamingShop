@@ -1,3 +1,5 @@
+import { CSSTransition } from 'react-transition-group';
+
 export default function ModalCreateAdd({
   isOpen,
   onClose,
@@ -9,9 +11,8 @@ export default function ModalCreateAdd({
   setNewLotText,
   addNewLot,
 }) {
-  if (!isOpen) return null;
-  
   return (
+    <CSSTransition in={isOpen} timeout={300} classNames="alert" unmountOnExit>
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
       <div className="bg-grayBack p-6 rounded-md shadow-lg w-80">
         <div className="mt-8 text-center">
@@ -65,6 +66,7 @@ export default function ModalCreateAdd({
         </div>
       </div>
     </div>
+    </CSSTransition>
   );
 };
 

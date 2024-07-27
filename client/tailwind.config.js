@@ -20,11 +20,13 @@ export default {
       enLetters: "#C5A3D5",
       red: "#EF4444",
       green: "#22C55E",
+      black: "#000000",
     },
     fontFamily: {
       'serif': ['Playfair Display', 'serif'],
     }
   },
   plugins: [],
+  
 }
 
