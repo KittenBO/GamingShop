@@ -11,6 +11,8 @@ import Games from './Pages/Games';
 import CreateAdd from './Pages/CreateAdd';
 import EditAdd from './Pages/EditAdd';
 import MGList from './Pages/MGList';
+import Sales from './Pages/Sales';
+import Buy from './Pages/Buy';
 
 import Albion from './Pages/GameList/Albion';
 
@@ -30,6 +32,8 @@ export default function App() {
         <Route path="/createAdd" element={<Layout><CreateAdd/></Layout>} />
         <Route path="/editAdd" element={<Layout><EditAdd/></Layout>} />
         <Route path="/mini-games" element={<Layout><MGList/></Layout>} />
+        <Route path="/sales" element={<Layout><Sales/></Layout>} />
+        <Route path="/buy" element={<Layout><Buy/></Layout>} />
 
 
 

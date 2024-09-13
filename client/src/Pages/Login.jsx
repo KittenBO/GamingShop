@@ -11,10 +11,10 @@ export default function LoginForm() {
   return (
     <div className="flex justify-center items-center h-screen bg-backgroundPages">
       <div className="bg-back shadow-lg rounded-lg w-full max-w-md p-8">
-        <a href="/" className='pl-2 text-sm hover:text-secondary'> <AiOutlineArrowLeft className="inline-block mr-3" />Вернуться назад</a>
+        <a href="/" className='pl-2 text-sm hover:text-secondary'> <AiOutlineArrowLeft className="inline-block -mt-1 mr-1 text-lg" />Вернуться назад</a>
         <div className="mb-6 mt-8 text-center">
           <img className='mx-auto w-1/4' src="logo.svg" alt="" />
-          <h1 className="text-3xl font-semibold font-serif">ИгроваяЛавка</h1>
+          <h1 className="text-xl sm:text-3xl font-semibold font-serif">ИгроваяЛавка</h1>
         </div>
         <div>
           <label htmlFor="login" className="block font-medium mb-2">

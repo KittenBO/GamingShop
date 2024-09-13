@@ -112,16 +112,16 @@ export default function CreateAdd() {
   return (
     <>
       <div className="container mx-auto mt-24">
-        <h1 className="text-7xl text-center font-bold text-primary pb-6">Мои товары</h1>
-        <hr className="w-4/5 mx-auto my-5 border-b-4 border-primary" />
+        <h1 className="font-serif text-7xl text-center font-bold text-primary pb-6">Мои товары</h1>
+        <hr className="w-4/5 mx-auto my-5 border-b-2 border-primary" />
         <div className="w-full my-6">
           <div className="flex justify-center mb-4">
-            <button onClick={openModal} className="font-medium text-3xl py-4 px-12 rounded-md bg-primary text-white">
+            <button onClick={openModal} className="font-medium text-xl sm:text-3xl py-3 sm:py-4 px-8 sm:px-12 rounded-md bg-primary text-white">
               Создать лот
             </button>
           </div>
           <div className="flex justify-end">
-            <button onClick={handlePublish} className="font-bold py-2 px-4 rounded bg-primary text-white">
+            <button onClick={handlePublish} className="text-sm sm:text-basefont-semibold sm:font-bold py-1.5 sm:py-2 px-3 sm:px-4 rounded bg-primary text-white">
               Опубликовать
             </button>
           </div>

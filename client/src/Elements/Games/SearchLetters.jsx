@@ -22,19 +22,19 @@ export default function SearchLetters() {
         {russianLetters.map((letter, index) => (
           <button
             key={index}
-            className="text-ruLetters hover:text-enLetters font-medium text-sm py-0.5 px-1 rounded-md"
+            className="text-ruLetters hover:text-enLetters font-medium text-xs xs:text-base sm:text-sm py-0.5 xs:py-1 md:py-0.5 px-1 rounded-md"
             onClick={() => scrollToSection(`${letter}`)}
           >
             {letter}
           </button>
         ))}
       </div>
-      <div className="flex flex-col space-y-0.5 items-center ml-24">
+      <div className="flex flex-col space-y-0.5 items-center ml-10 xs:ml-16 sm:ml-24">
         <h2 className="text-lg font-semibold">En</h2>
         {englishLetters.map((letter, index) => (
           <button
             key={index}
-            className="text-ruLetters hover:text-enLetters font-medium text-sm py-0.5 px-1 rounded-md"
+            className="text-ruLetters hover:text-enLetters font-medium text-xs xs:text-base sm:text-sm py-0.5 xs:py-1 md:py-0.5 px-1 rounded-md"
             onClick={() => scrollToSection(`${letter}`)}
           >
             {letter}

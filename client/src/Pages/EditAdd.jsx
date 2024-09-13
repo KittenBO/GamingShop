@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
 
 import ModalNewBlock from '../Elements/EditAdd/ModalNewBlock'
 import BlocksEdit from '../Elements/EditAdd/BlocksEdit';
@@ -132,10 +131,10 @@ import ChatEditAdd from '../Elements/EditAdd/ChatEditAdd';
         <ReviewList gameAuthor={gameAuthor} reviews={reviews} />
         <ChatEditAdd gameAuthor={gameAuthor} />
         <div className='flex justify-end'>
-          <button className="bg-primary text-white font-bold py-2 mr-6 px-4 rounded">
+          <button className="bg-primary text-xs xs:text-sm sm:text-base text-white font-semibold sm:font-bold py-1.5 sm:py-2 mr-6 px-3 sm:px-4 rounded">
             Cохранить
           </button>
-          <button className="bg-primary text-white font-bold py-2 px-4 rounded">
+          <button className="bg-primary text-xs xs:text-sm sm:text-base text-white font-semibold sm:font-bold py-1.5 sm:py-2 px-3 sm:px-4 rounded">
             Cохранить и опубликовать
           </button>
         </div>

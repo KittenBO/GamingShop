@@ -96,7 +96,7 @@ export default function Albion() {
         <hr className='w-4/5 mx-auto my-5 border-b-4 border-primary' />
         <ul className="flex justify-between list-none w-4/5 mx-auto">
           <li
-            className={`items-center cursor-pointer p-6 rounded-md ${
+            className={`items-center cursor-pointer p-3 sm:p-6 rounded-md ${
               activeTab === 'gold' ? 'bg-back' : ''
             }`}
             onClick={() => handleTabClick('gold')}
@@ -104,7 +104,7 @@ export default function Albion() {
             <img src="../GameList/gold-icon.svg" alt="Gold" />
           </li>
           <li
-            className={`items-center cursor-pointer p-6 rounded-md ${
+            className={`items-center cursor-pointer p-3 sm:p-6 rounded-md ${
               activeTab === 'silver' ? 'bg-back' : ''
             }`}
             onClick={() => handleTabClick('silver')}
@@ -112,7 +112,7 @@ export default function Albion() {
             <img src="../GameList/silver-icon.svg" alt="Silver" />
           </li>
           <li
-            className={`items-center cursor-pointer p-6 rounded-md ${
+            className={`items-center cursor-pointer p-3 sm:p-6 rounded-md ${
               activeTab === 'account' ? 'bg-back' : ''
             }`}
             onClick={() => handleTabClick('account')}
@@ -120,7 +120,7 @@ export default function Albion() {
             <img src="../GameList/account-icon.svg" alt="Account" />
           </li>
           <li
-            className={`items-center cursor-pointer p-6 rounded-md ${
+            className={`items-center cursor-pointer p-3 sm:p-6 rounded-md ${
               activeTab === 'service' ? 'bg-back' : ''
             }`}
             onClick={() => handleTabClick('service')}
@@ -129,7 +129,7 @@ export default function Albion() {
           </li>
         </ul>
         <div className='flex justify-end'>
-          <a href="/createAdd" className="bg-primary px-8 py-2 text-lg my-6 rounded-md text-white">Создать</a>
+          <a href="/createAdd" className="bg-primary px-6 sm:px-8 py-1.5 sm:py-2 text-lg mr-4 sm:mr-0 my-6 rounded-md text-white">Создать</a>
         </div>
         <CSSTransition in={activeTab === 'gold'} timeout={300} classNames="tab-fade" unmountOnExit>
           <GoldGameList goldAds={goldAds} />

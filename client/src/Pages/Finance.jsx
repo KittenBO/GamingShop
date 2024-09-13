@@ -52,17 +52,17 @@ export default function Finance() {
   return (
     <>
       <div className="container mx-auto mt-24">
-        <h1 className="text-7xl text-center font-bold text-primary pb-6">Финансы</h1>
-        <hr className="w-4/5 mx-auto mt-2 border-b-4 border-primary" />
-        <h2 className="bg-primary py-1 text-3xl font-semibold rounded-md text-white text-center w-32 mx-auto mt-5">20 ₽</h2>
+        <h1 className="font-serif text-7xl text-center font-medium text-primary pb-6">Финансы</h1>
+        <hr className="w-4/5 mx-auto mt-2 border-b-2 border-primary" />
+        <h2 className="bg-primary py-1 text-xl font-semibold rounded-md text-white text-center w-20 mx-auto mt-5">20 ₽</h2>
         <button
-          className="bg-primary px-8 py-2 text-xl font-medium my-6 rounded-md text-white"
+          className="bg-primary px-6 xs:px-8 py-1.5 xs:py-2 ml-5 xs:ml-0 text-base xs:text-xl font-medium my-6 rounded-md text-white"
           onClick={toggleModal}
         >
           Вывести средства
         </button>
-        <div className="mt-8">
-          <h2 className="text-2xl font-bold mb-4">Список операций</h2>
+        <div className="mx-5 sm:mx-0 mt-8">
+          <h2 className="text-2xl text-primary font-bold mb-4">Список операций</h2>
           <ul>
             {financialOperations.map((operation, index) => {
               const date = new Date(operation.date);
@@ -71,11 +71,11 @@ export default function Finance() {
                 <li key={index}>
                   <div className="flex py-5 justify-between mb-2">
                     <div>
-                      <span className="text-xl font-bold mr-7">{formattedDate}</span>
-                      <span className="text-xl">{operation.description}</span>
+                      <span className="text-base sm:text-xl font-semibold text-primary mr-7">{formattedDate}</span>
+                      <span className="text-base sm:text-xl">{operation.description}</span>
                     </div>
-                    <div className={operation.amount < 0 ? 'text-red text-xl font-semibold' : 'text-green text-xl font-semibold'}>
-                      {operation.amount >= 0 ? '+' : '-'} {Math.abs(operation.amount)} ₽
+                    <div className={operation.amount < 0 ? 'text-red text-base sm:text-xl font-semibold' : 'text-green text-base sm:text-xl font-semibold'}>
+                      {operation.amount >= 0 ? '+' : '-'}{Math.abs(operation.amount)}₽
                     </div>
                   </div>
                   {index < financialOperations.length - 1 && (

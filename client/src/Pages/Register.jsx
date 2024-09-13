@@ -24,24 +24,24 @@ export default function Register() {
   };
 
   return (
-    <div className="flex justify-center items-center bg-backgroundPages">
+    <div className="flex justify-center h-screen items-center bg-backgroundPages">
       <div className="bg-back shadow-lg rounded-lg w-full max-w-md md:max-w-xl md:w-3/4 p-8">
-        <a href="/" className='pl-2 text-sm hover:text-secondary'> <AiOutlineArrowLeft className="inline-block mr-3" />Вернуться назад</a>
-        <div className="mb-6 mt-8 text-center">
-          <img className='mx-auto w-1/5' src="logo.svg" alt="" />
-          <h1 className="text-xl font-semibold font-serif">ИгроваяЛавка</h1>
-          <h1 className="text-3xl font-bold pt-3">Зарегистрироваться</h1>
+        <a href="/" className='pl-2 text-sm hover:text-secondary'> <AiOutlineArrowLeft className="inline-block -mt-1 mr-1 text-lg" />Вернуться назад</a>
+        <div className="mb-3 xs:mb-6 mt-4 xs:mt-8 text-center">
+          <img className='mx-auto w-1/6 xs:w-1/5' src="logo.svg" alt="" />
+          <h1 className="text-lg xs:text-xl font-semibold font-serif">ИгроваяЛавка</h1>
+          <h1 className="text-xl xs:text-3xl font-bold pt-3">Зарегистрироваться</h1>
         </div>
         <div>
           <div className="mb-4">
             <button
-              className={`w-1/2 py-2 rounded-l-lg ${registrationType === 'phone' ? 'bg-primary text-white' : 'bg-gray-200'}`}
+              className={`w-1/2 py-1.5 xs:py-2 rounded-l-lg ${registrationType === 'phone' ? 'bg-primary text-white' : 'bg-gray-200'}`}
               onClick={() => handleRegistrationTypeChange('phone')}
             >
               По телефону
             </button>
             <button
-              className={`w-1/2 py-2 rounded-r-lg ${registrationType === 'email' ? 'bg-primary text-white' : 'bg-gray-200'}`}
+              className={`w-1/2 py-1.5 xs:py-2 rounded-r-lg ${registrationType === 'email' ? 'bg-primary text-white' : 'bg-gray-200'}`}
               onClick={() => handleRegistrationTypeChange('email')}
             >
               По E-Mail
